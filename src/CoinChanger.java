@@ -7,12 +7,11 @@ public class CoinChanger {
     List<Integer> coins = Arrays.asList(2, 1);
 
     public List<Integer> convert(int amount) {
-        if (amount >= 3) {
-            for (Integer coin : coins) {
+        for (Integer coin : coins) {
+            while (amount >= coin) {
                 change.add(coin);
+                amount -= coin;
             }
-        } else {
-            change.add(amount);
         }
         return change;
     }
