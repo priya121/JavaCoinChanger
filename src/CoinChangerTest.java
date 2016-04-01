@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -49,8 +50,27 @@ public class CoinChangerTest {
 
     @Test
     public void converts6To2p2p2p() {
-        coins.add(5);
-        coins.add(1);
+        List<Integer> coins = addCoins(Arrays.asList(5, 1));
         assertEquals(coins, coinChanger.convert(6));
+    }
+    
+    @Test
+    public void converts67To50p10p5p2p() {
+        List<Integer> coins = addCoins(Arrays.asList(50, 10, 5, 2));
+        assertEquals(coins, coinChanger.convert(67));
+    }
+    
+    @Test
+    public void convertsOnePoundFiftySeven() {
+        List<Integer> coins = addCoins(Arrays.asList(100, 50, 10, 5, 2));
+        assertEquals(coins, coinChanger.convert(167));
+   }
+
+    public List<Integer> addCoins(List<Integer> coins) {
+        List<Integer> coinsList = new ArrayList<>();
+        for (Integer coin : coins) {
+            coinsList.add(coin);
+        }
+        return coinsList;
     }
 }
