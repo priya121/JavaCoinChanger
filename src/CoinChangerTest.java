@@ -66,6 +66,12 @@ public class CoinChangerTest {
         assertEquals(coins, coinChanger.convert(167));
    }
 
+    @Test
+    public void convertsThreeHundredAndNinetyEight() {
+        List<Integer> coins = addCoins(Arrays.asList(100, 100, 100, 50, 20, 10, 5, 2, 1));
+        assertEquals(coins, coinChanger.convert(388));
+    }
+
     public List<Integer> addCoins(List<Integer> coins) {
         List<Integer> coinsList = new ArrayList<>();
         for (Integer coin : coins) {
