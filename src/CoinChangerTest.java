@@ -46,4 +46,11 @@ public class CoinChangerTest {
         coins.add(5);
         assertEquals(coins, coinChanger.convert(5));
     }
+
+    @Test
+    public void converts6To2p2p2p() {
+        coins.add(5);
+        coins.add(1);
+        assertEquals(coins, coinChanger.convert(6));
+    }
 }
