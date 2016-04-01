@@ -7,14 +7,16 @@ public class CoinChangerTest {
 
     @Test
     public void convertsEmptyToEmpty() {
-        coinChanger.convert(0);
         assertEquals(0, coinChanger.convert(0));
     }
 
     @Test
     public void convertsOneTo1p() {
-        coinChanger.convert(1);
         assertEquals(1, coinChanger.convert(1));
+    }
 
+    @Test
+    public void convertsTwoTo2p() {
+        assertEquals(2, coinChanger.convert(2));
     }
 }
