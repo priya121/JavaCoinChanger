@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CoinChanger {
     List<Integer> change = new ArrayList<>();
-    List<Integer> coins = Arrays.asList(2, 1);
+    List<Integer> coins = Arrays.asList(5, 2, 1);
 
     public List<Integer> convert(int amount) {
         for (Integer coin : coins) {

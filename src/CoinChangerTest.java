@@ -12,7 +12,6 @@ public class CoinChangerTest {
 
     @Test
     public void convertsEmptyToEmpty() {
-        change.add(0);
         assertEquals(change, coinChanger.convert(0));
     }
 
@@ -36,11 +35,15 @@ public class CoinChangerTest {
     }
 
     @Test
-    public void convertsFourInto2p2p() {
+    public void convertsFourTo2p2p() {
         coins.add(2);
         coins.add(2);
         assertEquals(coins, coinChanger.convert(4));
     }
 
-
+    @Test
+    public void convertsFiveTo5p() {
+        coins.add(5);
+        assertEquals(coins, coinChanger.convert(5));
+    }
 }
